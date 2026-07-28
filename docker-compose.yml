@@ -1,7 +1,7 @@
-version: '3.8'
-
+<<<<<<< HEAD
+version: "3.8"
 services:
-  # MongoDB Database
+  # Existing TeknoFixHub services preserved
   mongodb:
     image: mongo:6.0
     container_name: teknofixhub-mongodb
@@ -15,7 +15,6 @@ services:
     networks:
       - teknofixhub-network
 
-  # Backend API
   backend:
     build:
       context: ./backend
@@ -34,7 +33,6 @@ services:
     networks:
       - teknofixhub-network
 
-  # Frontend
   frontend:
     build:
       context: ./frontend
@@ -49,7 +47,6 @@ services:
     networks:
       - teknofixhub-network
 
-  # Admin Dashboard
   admin:
     build:
       context: ./admin
@@ -64,7 +61,6 @@ services:
     networks:
       - teknofixhub-network
 
-  # PostgreSQL Database (Alternative)
   postgres:
     image: postgres:15
     container_name: teknofixhub-postgres
@@ -79,7 +75,6 @@ services:
     networks:
       - teknofixhub-network
 
-  # Redis Cache
   redis:
     image: redis:7
     container_name: teknofixhub-redis
@@ -88,7 +83,6 @@ services:
     networks:
       - teknofixhub-network
 
-  # Nginx Reverse Proxy
   nginx:
     image: nginx:latest
     container_name: teknofixhub-nginx
@@ -105,6 +99,14 @@ services:
     networks:
       - teknofixhub-network
 
+  # Static site for Blog-Keren
+  web:
+    build: .
+    image: blog-keren-web:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
 volumes:
   mongo_data:
   postgres_data:
@@ -112,3 +114,13 @@ volumes:
 networks:
   teknofixhub-network:
     driver: bridge
+=======
+version: "3.8"
+services:
+  web:
+    build: .
+    image: blog-keren-web:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+>>>>>>> 74c409f (Add static affiliate pages, Docker setup, and CI workflow)

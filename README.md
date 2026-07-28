@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TeknoFixHub Ultimate Platform
 
 Platform blog teknologi terpadu dengan frontend, backend, admin panel, dan fitur e-commerce.
@@ -74,3 +75,93 @@ Silakan buat pull request atau buka issue untuk saran dan perbaikan.
 ## 📄 License
 
 MIT
+ 
+## Menjalankan situs affiliate dengan Docker
+
+Saya menambahkan halaman statis untuk affiliate Shopee, TikTok Shop, dan Tokopedia serta konfigurasi Docker.
+
+Jalankan perintah berikut (memerlukan Docker dan Docker Compose):
+
+```bash
+# Bangun image dan jalankan container di background
+docker compose up --build -d
+
+# Buka http://localhost:8080 di browser
+
+# Untuk menghentikan dan menghapus container
+docker compose down
+```
+
+Halaman yang dibuat:
+- `/site/index.html` — daftar marketplace
+- `/site/shopee.html` — contoh tautan Shopee
+- `/site/tiktok.html` — contoh tautan TikTok Shop
+- `/site/tokopedia.html` — contoh tautan Tokopedia
+
+Jika mau, saya bisa juga menambahkan workflow GitHub Actions untuk build otomatis image.
+
+## GitHub Actions — Build & publish image otomatis
+
+Saya menambahkan workflow GitHub Actions yang akan membangun dan mendorong image ke GitHub Container Registry (GHCR) setiap kali ada push ke `main`.
+
+Catatan dan cara pakai:
+- Image akan diberi tag `ghcr.io/OWNER/blog-keren:latest` (OWNER adalah nama pemilik repo).
+- Untuk menarik dan menjalankan image yang dibangun otomatis:
+
+```bash
+# tarik image dari GHCR (ganti OWNER)
+docker pull ghcr.io/OWNER/blog-keren:latest
+
+# jalankan container
+docker run -p 8080:80 ghcr.io/OWNER/blog-keren:latest
+```
+
+- Jika Anda lebih ingin mendorong ke Docker Hub, saya bisa tambahkan langkah alternatif yang menggunakan `DOCKERHUB_USERNAME` dan `DOCKERHUB_TOKEN` repository secrets.
+
+=======
+# Blog-Keren
+Electronik Firmware
+
+## Menjalankan situs affiliate dengan Docker
+
+Saya menambahkan halaman statis untuk affiliate Shopee, TikTok Shop, dan Tokopedia serta konfigurasi Docker.
+
+Jalankan perintah berikut (memerlukan Docker dan Docker Compose):
+
+```bash
+# Bangun image dan jalankan container di background
+docker compose up --build -d
+
+# Buka http://localhost:8080 di browser
+
+# Untuk menghentikan dan menghapus container
+docker compose down
+```
+
+Halaman yang dibuat:
+- `/site/index.html` — daftar marketplace
+- `/site/shopee.html` — contoh tautan Shopee
+- `/site/tiktok.html` — contoh tautan TikTok Shop
+- `/site/tokopedia.html` — contoh tautan Tokopedia
+
+Jika mau, saya bisa juga menambahkan workflow GitHub Actions untuk build otomatis image.
+
+## GitHub Actions — Build & publish image otomatis
+
+Saya menambahkan workflow GitHub Actions yang akan membangun dan mendorong image ke GitHub Container Registry (GHCR) setiap kali ada push ke `main`.
+
+Catatan dan cara pakai:
+- Image akan diberi tag `ghcr.io/OWNER/blog-keren:latest` (OWNER adalah nama pemilik repo).
+- Untuk menarik dan menjalankan image yang dibangun otomatis:
+
+```bash
+# tarik image dari GHCR (ganti OWNER)
+docker pull ghcr.io/OWNER/blog-keren:latest
+
+# jalankan container
+docker run -p 8080:80 ghcr.io/OWNER/blog-keren:latest
+```
+
+- Jika Anda lebih ingin mendorong ke Docker Hub, saya bisa tambahkan langkah alternatif yang menggunakan `DOCKERHUB_USERNAME` dan `DOCKERHUB_TOKEN` repository secrets.
+
+>>>>>>> 74c409f (Add static affiliate pages, Docker setup, and CI workflow)
