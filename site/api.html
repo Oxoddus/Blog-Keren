@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id"> 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>API | TeknoFixHub Ultimate</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="/logo.svg" alt="TeknoFixHub logo" width="56" height="56" />
+        <div>
+          <h1>API Documentation</h1>
+          <p>Rangkuman endpoint backend untuk notifikasi, pembayaran, tracking, chat, dan sosial.</p>
+        </div>
+      </header>
+
+      <nav>
+        <a href="/">Beranda</a>
+        <a href="/backend.html">Backend</a>
+        <a href="/config.html">Config</a>
+        <a href="/docs.html">Docs</a>
+      </nav>
+
+      <section class="hero">
+        <div class="card">
+          <h2>Endpoint Utama</h2>
+          <ul>
+            <li>GET /api/health</li>
+            <li>POST /api/notify/whatsapp</li>
+            <li>POST /api/notify/telegram</li>
+            <li>POST /api/payments</li>
+            <li>GET /api/tracking/:orderId</li>
+            <li>POST /api/chat</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Integrasi sistem</h2>
+          <p>API page menunjukkan bahwa backend dapat mendukung notifikasi otomatis dan laporan tracking yang dipakai dalam platform.</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>API documentation membantu tim developer memahami integrasi penuh TeknoFixHub.</p>
+      </footer>
+    </main>
+  </body>
+</html>

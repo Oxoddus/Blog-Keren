@@ -1,167 +1,93 @@
-<<<<<<< HEAD
-# TeknoFixHub Ultimate Platform
+![Status](https://img.shields.io/badge/status-active-brightgreen) ![Docker](https://img.shields.io/badge/docker-ready-blue) ![Node.js](https://img.shields.io/badge/node.js-18.x-green) ![React](https://img.shields.io/badge/react-18.x-blue)
 
-Platform blog teknologi terpadu dengan frontend, backend, admin panel, dan fitur e-commerce.
+# TeknoFixHub Ultimate
 
-## 📁 Struktur Project
+Platform digital profesional dengan fitur lengkap e-commerce, affiliate, notifikasi, chat online, tracking, pembayaran, dan branding.
 
-```
-TeknoFixHub_Ultimate/
-├── frontend/          # React aplikasi client
-├── backend/           # Node.js API server
-├── admin/             # Admin dashboard
-├── api/               # API endpoints dokumentasi
-├── database/          # Database schemas & migrations
-├── docker/            # Docker configuration
-├── docs/              # Dokumentasi project
-├── github/            # GitHub workflows & CI/CD
-├── assets/            # Static assets (images, icons)
-├── firmware/          # IoT/Hardware firmware
-├── products/          # Product database
-├── affiliate/         # Affiliate program management
-├── media/             # Media files (uploads)
-├── storage/           # Cloud storage configuration
-├── public/            # Public assets
-├── config/            # Configuration files
-├── scripts/           # Utility scripts
-├── logs/              # Application logs
-└── backups/           # Database backups
-```
+## 🚀 Fitur Utama
 
-## 🚀 Tech Stack
+- ✅ Social media lengkap: WhatsApp, Telegram, Instagram, Facebook, LinkedIn, Twitter
+- ✅ Notifikasi otomatis ke WhatsApp dan bot Telegram
+- ✅ Live chat support dan omnichannel customer experience
+- ✅ Pembayaran digital, COD, QRIS, e-wallet, kartu kredit, dan transfer bank
+- ✅ Tracking order & service dengan status real-time
+- ✅ Admin dashboard dan monitoring kinerja
+- ✅ Branding profesional dengan logo, banner, dan halaman presentasi
+- ✅ Docker + Docker Compose + GitHub Actions untuk deployment
 
-- **Frontend**: React.js + Vite
-- **Backend**: Node.js + Express.js
-- **Database**: MongoDB/PostgreSQL
-- **Admin**: React Admin
-- **Containerization**: Docker
-- **API**: REST API
+## 📱 Akses Platform
 
-## 📋 Fitur
+- Frontend: `http://<HOST_IP>/`
+- Admin Dashboard: `http://<HOST_IP>/admin/`
+- Social Media / Contact: `http://<HOST_IP>/social.html`
+- API Health: `http://<HOST_IP>/api/health`
 
-- ✅ Blog management system
-- ✅ User authentication
-- ✅ Product catalog
-- ✅ Admin dashboard
-- ✅ Affiliate program
-- ✅ Media management
-- ✅ Cloud storage integration
-- ✅ IoT firmware support
+## 💬 Social Media
+
+- WhatsApp Business: `https://wa.me/6281234567890`
+- Telegram Bot: `https://t.me/TeknoFixHubBot`
+- Instagram: `https://instagram.com/teknofixhub`
+- Facebook: `https://facebook.com/teknofixhub`
+- LinkedIn: `https://linkedin.com/company/teknofixhub`
+- Twitter: `https://twitter.com/teknofixhub`
+
+## 🔔 Notifikasi Otomatis
+
+Backend sekarang mendukung endpoint notifikasi:
+
+- `POST /api/notify/whatsapp`
+- `POST /api/notify/telegram`
+
+Ini bisa dikembangkan untuk mengirim pesan order, tracking, COD, dan alert support.
+
+## � Keranjang & Mobile Checkout
+
+Platform juga mendukung keranjang belanja responsif dan checkout mobile-friendly.
+
+- `POST /api/cart` untuk menambahkan item ke keranjang
+- `GET /api/cart/:userId` untuk melihat keranjang pengguna
+- `POST /api/payment/qris` untuk pembayaran QRIS
+- Scan QRIS akan memicu notifikasi otomatis ke konsumen saat pembayaran diproses
+- Akses dan kontrol semua fitur via HP dengan mobile-first design
+
+## 🚚 Shipping & Tracking
+
+Tracking order dan service diintegrasikan ke shipping provider.
+
+- `POST /api/shipping` untuk mendaftarkan pengiriman
+- `GET /api/tracking/:orderId` untuk status order dan delivery
+
+## �💳 Pembayaran & COD
+
+Platform mencakup halaman pembayaran dan toko online dengan fitur:
+
+- COD (Cash on Delivery)
+- E-wallet: OVO, DANA, GoPay, ShopeePay
+- QRIS dan virtual account
+- Kartu kredit / debit
+
+## 📦 Tracking & Service
+
+Tracking order dan service diintegrasikan dengan notifikasi otomatis, sehingga pelanggan dapat memeriksa status pesanan dan teknisi.
+
+## 🧩 Branding & Tampilan Profesional
+
+- Logo baru dan banner brand
+- Halaman fitur profesional
+- Struktur halaman yang rapi
+- Social media hub untuk promosi
 
 ## 🛠️ Setup
 
-### Prerequisites
-- Node.js >= 16
-- MongoDB/PostgreSQL
-- Docker (optional)
-
-### Installation
-
 1. Clone repository
-2. Setup frontend: `cd frontend && npm install`
-3. Setup backend: `cd backend && npm install`
-4. Configure environment variables
-5. Run migrations: `npm run migrate`
-6. Start services: `npm run dev`
+2. Jalankan `docker compose up -d --build`
+3. Buka `http://localhost/` atau `http://<HOST_IP>/`
+4. Akses admin di `http://<HOST_IP>/admin/`
 
-## 📚 Dokumentasi
+## 📦 GitHub Actions
 
-Lihat folder `docs/` untuk dokumentasi lengkap.
-
-## 🤝 Kontribusi
-
-Silakan buat pull request atau buka issue untuk saran dan perbaikan.
+Workflow build dan deploy otomatis tersedia untuk Docker image dan file statis.
 
 ## 📄 License
 
 MIT
- 
-## Menjalankan situs affiliate dengan Docker
-
-Saya menambahkan halaman statis untuk affiliate Shopee, TikTok Shop, dan Tokopedia serta konfigurasi Docker.
-
-Jalankan perintah berikut (memerlukan Docker dan Docker Compose):
-
-```bash
-# Bangun image dan jalankan container di background
-docker compose up --build -d
-
-# Buka http://localhost:8080 di browser
-
-# Untuk menghentikan dan menghapus container
-docker compose down
-```
-
-Halaman yang dibuat:
-- `/site/index.html` — daftar marketplace
-- `/site/shopee.html` — contoh tautan Shopee
-- `/site/tiktok.html` — contoh tautan TikTok Shop
-- `/site/tokopedia.html` — contoh tautan Tokopedia
-
-Jika mau, saya bisa juga menambahkan workflow GitHub Actions untuk build otomatis image.
-
-## GitHub Actions — Build & publish image otomatis
-
-Saya menambahkan workflow GitHub Actions yang akan membangun dan mendorong image ke GitHub Container Registry (GHCR) setiap kali ada push ke `main`.
-
-Catatan dan cara pakai:
-- Image akan diberi tag `ghcr.io/OWNER/blog-keren:latest` (OWNER adalah nama pemilik repo).
-- Untuk menarik dan menjalankan image yang dibangun otomatis:
-
-```bash
-# tarik image dari GHCR (ganti OWNER)
-docker pull ghcr.io/OWNER/blog-keren:latest
-
-# jalankan container
-docker run -p 8080:80 ghcr.io/OWNER/blog-keren:latest
-```
-
-- Jika Anda lebih ingin mendorong ke Docker Hub, saya bisa tambahkan langkah alternatif yang menggunakan `DOCKERHUB_USERNAME` dan `DOCKERHUB_TOKEN` repository secrets.
-
-=======
-# Blog-Keren
-Electronik Firmware
-
-## Menjalankan situs affiliate dengan Docker
-
-Saya menambahkan halaman statis untuk affiliate Shopee, TikTok Shop, dan Tokopedia serta konfigurasi Docker.
-
-Jalankan perintah berikut (memerlukan Docker dan Docker Compose):
-
-```bash
-# Bangun image dan jalankan container di background
-docker compose up --build -d
-
-# Buka http://localhost:8080 di browser
-
-# Untuk menghentikan dan menghapus container
-docker compose down
-```
-
-Halaman yang dibuat:
-- `/site/index.html` — daftar marketplace
-- `/site/shopee.html` — contoh tautan Shopee
-- `/site/tiktok.html` — contoh tautan TikTok Shop
-- `/site/tokopedia.html` — contoh tautan Tokopedia
-
-Jika mau, saya bisa juga menambahkan workflow GitHub Actions untuk build otomatis image.
-
-## GitHub Actions — Build & publish image otomatis
-
-Saya menambahkan workflow GitHub Actions yang akan membangun dan mendorong image ke GitHub Container Registry (GHCR) setiap kali ada push ke `main`.
-
-Catatan dan cara pakai:
-- Image akan diberi tag `ghcr.io/OWNER/blog-keren:latest` (OWNER adalah nama pemilik repo).
-- Untuk menarik dan menjalankan image yang dibangun otomatis:
-
-```bash
-# tarik image dari GHCR (ganti OWNER)
-docker pull ghcr.io/OWNER/blog-keren:latest
-
-# jalankan container
-docker run -p 8080:80 ghcr.io/OWNER/blog-keren:latest
-```
-
-- Jika Anda lebih ingin mendorong ke Docker Hub, saya bisa tambahkan langkah alternatif yang menggunakan `DOCKERHUB_USERNAME` dan `DOCKERHUB_TOKEN` repository secrets.
-
->>>>>>> 74c409f (Add static affiliate pages, Docker setup, and CI workflow)
